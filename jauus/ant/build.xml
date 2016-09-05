@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project name="JAUUS Windows Ant Build Script" default="jar">
+	<description>Create the Primay JAUUS Jar File</description>
+	
+	<property name="AUTAR" value="..\build\autoUpdate.jar"/>
+	<property name="AUCLASSES" value="..\bin"/>
+	<property name="AUSRC" value="..\src"/>
+	<property name="BUILDHOME" value="..\build"/>
+	<property name="HOME" value="..\"/>
+
+    <target name="filecopy" description="copy working files over">
+      <copy file="${HOME}\client.properties" todir="${BUILDHOME}"/>
+	  <copy file="${HOME}\lmm.xml" todir="${BUILDHOME}"/>
+      <copy file="${HOME}\server.properties" todir="${BUILDHOME}"/>
+    </target>
+
+    <target name="jar" depends="filecopy" description="jar the application">
+      <mkdir dir="${BUILDHOME}"/>
+      <jar jarfile="${AUTAR}" basedir="${AUCLASSES}" includes="**">
+        <manifest>
+          <attribute name="Main-Class" value="integrity.client.JAUUS"/>
+        </manifest>
+      </jar>
+
+    </target>
+
+</project>

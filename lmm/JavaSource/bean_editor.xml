@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<default-builder class-name="swingbeanformbuilder.core.services.impl.SwingSBFBFormBuilderImpl" />
+    <date-format value="MM/dd/yyyy" />
+
+    <class name="com.lmm.sched.proc.LMMGlobalConfig" label="Settings" >
+
+		<group render="innerPanel" show-banner="false" label="General">
+	        <field name="computerId" visible="false" />
+	        <field name="msgFileChunkSizeMB" visible="false" label="File Chunk Size (MB)" fill="none" maxlength="3" last-of-line="false" />
+	        <field name="msgFileTimeoutSecs" visible="false" label="Transfer Timeout (Secs)" fill="none" maxlength="3" tool-tip="How much time is given before giving up on a file transfer" />
+
+	        <field name="computerName" label="Name" label-color="#FF0000" tool-tip="The name of the player" />
+	        <field name="serverHost" label="Host" last-of-line="false" tool-tip="Location of the MediaSOLV server" />
+	        <field name="serverPort" label="Port" fill="none" maxlength="5" tool-tip="The port used by the MediaSOLV server" />
+	        <field name="autoUpdate" label="Enable Auto-Update" last-of-line="false" tool-tip="With this enabled, the player will download new software updates" />
+	        <field name="defaultTheme" label="Default Theme (xml file)" fill="horizontal" tool-tip="The theme that is played if an error occurs on the player" />
+		</group>
+
+		<group render="innerPanel" show-banner="false" label="Communications" >
+	        <field name="ftpUrl" label="FTP Site" fill="horizontal" tool-tip="The location of the FTP site" />
+    	    <field name="ftpUsername" label="Username" fill="horizontal" tool-tip="FTP account username" />
+    	    <field name="ftpPword" label="Password" fill="horizontal" password="true" tool-tip="FTP account password" />
+    	    <field name="ftpUploadDir" label="Upload Directory" fill="horizontal" tool-tip="What directory all ftp transactions should occur" />
+    	    <field name="ipDiscoveryUrl" label="IP Lookup URL" fill="horizontal" tool-tip="A URL that returns the IP of the current player when requested" />
+    	    <field name="ipCheckCronExpr" label="IP Cron Expr." fill="horizontal" tool-tip="A CRON expression that dictates when the IP lookup it executed" />
+		</group>
+
+		<group render="innerPanel" show-banner="false" label="Proof of Performance (POP)">
+	        <field name="popEnabled" label="Enable POP" last-of-line="false" tool-tip="With this enabled, the player will keep track of proof of performance statistics" />
+	        <field name="screenShotIntervalHrs" label="Screen Shot Freq.(hrs)" fill="none" maxlength="4" tool-tip="How often a screen shot should be taken (0 to disable)" />
+		</group>
+
+		<group render="tab" show-banner="true" label="Advanced" >
+	        <field name="mailAlertEnabled" label="Enable Email Alerts" fill="horizontal" tool-tip="Should the player send emails during start up" />
+	        <field name="mailHost" label="Mail Host" fill="horizontal" tool-tip="What email server should be used" />
+	        <field name="mailFrom" label="Mail From" fill="horizontal" tool-tip="Who the email is to be seen to come from" />
+	        <field name="mailTo" label="Mail To" fill="horizontal" tool-tip="Who the email alerts should be sent (multiple emails can be seperated by commas)" />
+	        <field name="mailSubject" label="Mail Subject" fill="both" tool-tip="The subject for the email that is sent" />
+    	    <field name="mailPassword" label="Mail Password" fill="horizontal" password="true" tool-tip="The password to use for the SMTP server" />
+
+	        <field name="msgDownMins" label="Down Minutes" fill="none" maxlength="3" last-of-line="false" tool-tip="How many minutes can pass without communication for the player to be downed (this is a problem)" />
+	        <field name="msgQuestionableMins" label="Questionable Minutes" fill="none" maxlength="3" tool-tip="How many minutes can pass without communication for the player (this may or may not be a problem)" />
+	        <field name="killCmd" label="Kill Cmd" fill="horizontal" tool-tip="Command to run for restarting the application" />
+	        <field name="killCronExpr" label="Kill Cron Expr." fill="horizontal" tool-tip="A CRON expression for how often the Kill command should be executed" />
+	        <field name="debugLog" label="Enable Debug" tool-tip="Used by support for increasing output of the application" />
+	        <field name="appFlags" label="App Flags" fill="horizontal" tool-tip="Support use only for troubleshooting" />
+		</group>
+
+	</class>    
+    
+</root>

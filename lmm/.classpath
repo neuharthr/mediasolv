@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="JavaSource"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/jauus"/>
+	<classpathentry kind="lib" path="include/activation.jar"/>
+	<classpathentry kind="lib" path="include/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="include/commons-collections.jar"/>
+	<classpathentry kind="lib" path="include/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="include/commons-digester.jar"/>
+	<classpathentry kind="lib" path="include/commons-logging.jar"/>
+	<classpathentry kind="lib" path="include/commons-net.jar"/>
+	<classpathentry kind="lib" path="include/commons-pool.jar"/>
+	<classpathentry kind="lib" path="include/db4o.jar"/>
+	<classpathentry kind="lib" path="include/flute-jfree.jar"/>
+	<classpathentry kind="lib" path="include/gnujaxp.jar"/>
+	<classpathentry kind="lib" path="include/itext.jar"/>
+	<classpathentry kind="lib" path="include/javamail.jar"/>
+	<classpathentry kind="lib" path="include/jcommon-serializer.jar"/>
+	<classpathentry kind="lib" path="include/jcommon.jar"/>
+	<classpathentry kind="lib" path="include/jfreereport.jar"/>
+	<classpathentry kind="lib" path="include/jta.jar"/>
+	<classpathentry kind="lib" path="include/jug-lgpl.jar"/>
+	<classpathentry kind="lib" path="include/libfonts.jar"/>
+	<classpathentry kind="lib" path="include/libformula.jar"/>
+	<classpathentry kind="lib" path="include/liblayout.jar"/>
+	<classpathentry kind="lib" path="include/libloader.jar"/>
+	<classpathentry kind="lib" path="include/librepository.jar"/>
+	<classpathentry kind="lib" path="include/libxml.jar"/>
+	<classpathentry kind="lib" path="include/liquidlnf.jar"/>
+	<classpathentry kind="lib" path="include/quartz.jar"/>
+	<classpathentry kind="lib" path="include/sac.jar"/>
+	<classpathentry kind="lib" path="include/systray4j.jar"/>
+	<classpathentry kind="lib" path="include/wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

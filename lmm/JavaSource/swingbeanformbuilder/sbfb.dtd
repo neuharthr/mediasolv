@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT allowed-value EMPTY>
+<!ATTLIST allowed-value
+	value CDATA #REQUIRED
+	label CDATA #IMPLIED
+>
+<!--
+Entity to begin a class definition. A class definition let you 
+define how this class will be layed out by SBFB.
+
+This tag also let you bind a custom component on a specific
+class type (when nested in another class, eg: bind all java.util.Date
+instances on a custom JDatePicker component).
+-->
+<!ELEMENT class (field*,group*,field*,group*)> 
+<!ATTLIST class name CDATA #REQUIRED> 
+<!ATTLIST class label CDATA #IMPLIED>
+<!ATTLIST class icon CDATA #IMPLIED>
+<!ATTLIST class custom-component CDATA #IMPLIED>
+
+<!ELEMENT date-format EMPTY>
+<!ATTLIST date-format
+	value CDATA #REQUIRED
+>
+<!ELEMENT default-builder EMPTY>
+<!ATTLIST default-builder
+	class-name CDATA #REQUIRED
+>
+<!ELEMENT new-label EMPTY>
+<!ATTLIST new-label
+	value CDATA #REQUIRED
+>
+<!ELEMENT modify-label EMPTY>
+<!ATTLIST modify-label
+	value CDATA #REQUIRED
+>
+
+<!ELEMENT delete-label EMPTY>
+<!ATTLIST delete-label
+	value CDATA #REQUIRED
+>
+<!ELEMENT field (allowed-value*)>
+<!ATTLIST field
+	name CDATA #REQUIRED
+	visible CDATA #IMPLIED
+	bold-label CDATA #IMPLIED
+	maxlength CDATA #IMPLIED
+	fill CDATA #IMPLIED
+	last-of-line CDATA #IMPLIED
+	type CDATA #IMPLIED
+	selection-mode CDATA #IMPLIED
+	class-name CDATA #IMPLIED
+	column-spanned CDATA #IMPLIED
+	label CDATA #IMPLIED
+	background-color CDATA #IMPLIED
+	custom-component CDATA #IMPLIED
+	last-of-line (true|false) "true"
+	render CDATA #IMPLIED
+	label-color CDATA #IMPLIED
+	password CDATA #IMPLIED
+	tool-tip CDATA #IMPLIED
+>
+<!ELEMENT group (field+)>
+<!ATTLIST group
+	name CDATA #IMPLIED
+	label CDATA #IMPLIED
+	show-banner CDATA #IMPLIED
+	render CDATA #IMPLIED
+	last-of-line CDATA #IMPLIED
+	fill CDATA #IMPLIED
+	border CDATA #IMPLIED 
+>
+<!ELEMENT root (default-builder*, date-format*, new-label*, modify-label*, delete-label*, class*)>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root SYSTEM "sbfb.dtd">
+<root>
+	<default-builder class-name="swingbeanformbuilder.core.services.impl.SwingSBFBFormBuilderImpl" />
+    <date-format value="MM/dd/yyyy" />
+    <new-label value="Add new" />
+    <modify-label value="Modify" />    	
+    <delete-label value="Remove" />
+    <class name="swingbeanformbuilder.demo.DemoBean" label="Person informations" icon="resources/bart.gif">
+        <field name="id" visible="false" />
+        <field name="firstname" maxlength="20" fill="horizontal" last-of-line="false" />
+        <field name="lastname" maxlength="20" fill="horizontal" bold-label="true" tool-tip="This is good!"/>
+		<group render="innerPanel" show-banner="false" label="You can label inner groups">       
+	        <field name="age" fill="none" maxlength="3" background-color="#DDFFDD" last-of-line="false" />
+<!--        <field name="birthday" custom-component="swingbeanformbuilder.gui.swing.form.components.swingx.SBFBCustomDatePicker" fill="none" /> -->
+	        <field name="sexe" fill="none" type="radio">
+	            <allowed-value value="M" label="Male" />
+	            <allowed-value value="F" label="Female" />
+	        </field>	        	        
+        </group>
+    	<group render="innerPanel" show-banner="false" last-of-line="false" fill="none" border="none">
+	    	<field name="client" last-of-line="false" fill="none" />
+	    	<field name="prospect" fill="none" last-of-line="false" />
+	        <field name="active" render="toggle" /> 	    	
+		</group>    	
+    	<field name="rate" fill="none" />            
+    	<field name="dad" last-of-line="false" />                 
+        <field name="contrat" label="Contract type">
+            <allowed-value value="CDI" />
+            <allowed-value value="CDD" />        
+        </field>    	
+        <field name="friends" fill="both" selection-mode="multiple" class-name="swingbeanformbuilder.demo.DemoBean" render="table" label-color="#0000FF" bold-label="true" /> 			
+        <group name="image" label="Image example" show-banner="true">
+	    	<field name="drink" type="image" label="Favourite Drink" />
+	        <field name="comments" fill="both" />	    	
+    	</group>
+		<group name="attributs" label="Banking informations" show-banner="true">
+	        <field name="iBAN" column-spanned="3" />
+			<field name="bankingComments" fill="both" label="Comments" />	              	
+        </group>
+    </class> 
+</root>

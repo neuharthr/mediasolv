@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<report:report xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:report="http://jfreereport.sourceforge.net/namespaces/reports/flow">
+  <report:query>default</report:query>
+
+  <report:inline-stylesheet>
+    div.page-header {
+      margin: 5pt;
+      background-color: #AFAFAF;
+      vertical-align: right;
+      border-bottom: 2pt solid #CFCFCF;
+    }
+
+    div.page-footer {
+      content: "Page " counter(page) " of " counter(pages);
+    }
+
+    table {
+      border-spacing: 0;
+    }
+
+    * {
+      font-family: "Arial", Sans-Serif;
+    }
+
+    @page {
+       margin: 2cm;
+       size: A4;
+    }
+  </report:inline-stylesheet>
+
+  <h1 style="background-color: #afafaf; text-align: center">
+    Proof of Performance (Daily)
+  </h1>
+
+  <p>
+    This report lists the advertisement reel(s) that ran within
+    the given date range. This report was created by the
+    MediaSOLV player.
+  </p>
+
+	<table>
+      <col style="width: 40%"/>
+      <col style="width: 15%"/>
+      <col style="width: 15%"/>
+      <col style="width: 30%"/>
+      <th>Theme</th>
+      <th>Total Plays</th>
+      <th>Avg. Play</th>
+      <th style="text-align: right;">Duration</th>
+	</table>
+	
+  <!--
+  Groups are nested.
+  -->
+  <report:group virtual="true">
+    <report:grouping-expression>
+      <report:property name="field[0]">Date</report:property>
+    </report:grouping-expression>
+
+    <div style="background-color: #C8FAF4; width: 100%;">
+      <report:content>
+        <report:value-expression report:formula="jfreereport:[Date]"/>
+      </report:content>
+    </div>
+
+    <table>
+      <!--
+      A table that does not declare its column widths will trigger
+      the auto-width mode. If that happens, the performance will go down.
+       -->
+      <col style="width: 40%"/>
+      <col style="width: 15%"/>
+      <col style="width: 15%"/>
+      <col style="width: 30%"/>
+      
+
+      <tbody>
+        <report:detail-section virtual="true">
+          <tr>
+            <td>
+              <report:content>
+                <report:value-expression formula="jfreereport:[Theme]"/>
+              </report:content>
+            </td>
+            <td>
+              <report:content format="0.00000">
+                <report:value-expression formula="jfreereport:[Total Plays]"/>
+              </report:content>
+            </td>
+            <td>
+              <report:content>
+                <report:value-expression formula="jfreereport:[Avg. Play]"/>
+              </report:content>
+            </td>
+            <td style="text-align: right;">
+              <report:content>
+                <report:value-expression formula="jfreereport:[Play Duration]"/>
+              </report:content>
+            </td>
+          </tr>
+        </report:detail-section>
+      </tbody>
+    </table>
+
+    <hr/>
+
+  </report:group>
+
+  <h2 style="text-align: center;">End of Report</h2>
+
+</report:report>

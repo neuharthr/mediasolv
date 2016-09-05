@@ -1,0 +1,19 @@
+ <jauus>
+	<structure>
+		<softwarehome>lib</softwarehome>
+		<autostart>true</autostart>
+		<autostartargs>SERVICE</autostartargs>
+	</structure>
+	<exclude>
+		<file-0>one</file-0>
+		<file-1>two</file-1>
+	</exclude>
+	<extensions>
+		<jar>jar</jar>
+		<dll>dll</dll>
+	</extensions>
+    <excludeExtensions>
+		<properties>properties</properties>
+		<xml>xml</xml>
+	</excludeExtensions>
+</jauus>

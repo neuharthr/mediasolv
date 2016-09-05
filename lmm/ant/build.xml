@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<project name="LMM Ant Build Script" default="jar">
+	<description>Create the Primay LMM Jar File</description>
+	
+	<property name="main.jar" value="..\build\lmm.jar"/>
+	<property name="common.jar" value="..\build\lmm-common.jar"/>
+	<property name="msg.jar" value="..\build\lmm-msg.jar"/>
+	<property name="msgit.jar" value="..\build\messageit.jar"/>
+	<property name="invoker.jar" value="..\build\invoker.jar"/>
+	<property name="beanform.jar" value="..\build\beanForm.jar"/>
+		
+	<property name="classes" value="..\bin"/>
+	<property name="build.home" value="..\build"/>
+	<property name="home" value="..\"/>
+
+	<target name="filecopy" description="copy working files over">
+	  <copy todir="${build.home}">
+	  	<fileset dir="${home}" includes="*.jar"/>
+	  	<fileset dir="${home}" includes="*.properties"/>
+	  </copy>
+	</target>
+	
+	
+	<target name="jar" depends="filecopy" description="jar the application">
+	  <mkdir dir="${build.home}"/>
+	
+	  <!-- All classes except classes found in the below jar files -->
+	  <jar jarfile="${common.jar}" basedir="${classes}" includes="**"
+		  	excludes="com/lmm/sched/**, com/lmm/msg/**, messageit/**, com/dawidweiss/**, swingbeanformbuilder/**">
+	  </jar>
+
+	  <!-- Scheduler (i.e. player) specific classes -->
+	  <jar jarfile="${main.jar}" basedir="${classes}" includes="com/lmm/sched/**">
+	    <manifest>
+	      <attribute name="Main-Class" value="com.lmm.sched.proc.LMMScheduler"/>
+	    </manifest>
+	  </jar>
+
+	  <!-- Message specific classes -->
+	  <jar jarfile="${msg.jar}" basedir="${classes}" includes="com/lmm/msg/**">
+	  </jar>
+
+	  <!-- MessageIt specific classes -->
+	  <jar jarfile="${msgit.jar}" basedir="${classes}" includes="messageit/**">
+	  </jar>
+
+	  <!-- Invoker specific classes -->
+	  <jar jarfile="${invoker.jar}" basedir="${classes}" includes="com/dawidweiss/**">
+	  </jar>
+
+	  <!-- BeanForm specific classes -->
+	  <jar jarfile="${beanform.jar}" basedir="${classes}" includes="swingbeanformbuilder/**">
+	  </jar>
+
+	</target>
+
+</project>
